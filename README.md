@@ -6,5 +6,5 @@ Página de contato - AlpesOne.
 
 <div>
     <img alt="Prévia do website" src=".github/desktop.png" width="65%">
-    <img alt="Prévia do website" src=".github/mobile.png" width="26.2%">
+    <img alt="Prévia do website" src=".github/mobile.png" width="20%">
 </div>
