@@ -1,0 +1,299 @@
+@font-face {
+  font-family: "BMWTypeNext Pro";
+  src: url("assets/fonts/BMW-Type-Web-Light-All.ttf") format("truetype"); /* Caminho do arquivo da fonte */
+}
+
+/* custom properties */
+:root {
+  --color-white: white;
+  --color-blue: #007bff;
+  --color-gray-1: #f6f6f6;
+  --color-gray-3: #4d4d4d;
+  --color-inactive: #a0a4a8;
+  --color-dividers: #e8e8e8;
+  --color-stroke: #bbbbbb;
+  --color-background: rgba(0, 0, 0, 0.5);
+
+  --font-family-base: "Poppins", sans-serif;
+  --font-family-accent: "BMWTypeNext Pro", sans-serif;
+  --font-weight-light: 200;
+}
+
+/* css reset */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 100%;
+  font-family: var(--font-family-base);
+}
+
+body > * {
+  padding: 0.75rem 2rem;
+}
+
+main {
+  flex: 1;
+}
+
+button {
+  background: var(--color-blue);
+  color: var(--color-white);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+/* navigation bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--color-stroke);
+}
+
+.navbar .logo {
+  height: 60px;
+}
+
+.menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.menu:not(.menu-right) {
+  cursor: not-allowed;
+}
+
+.menu-right img {
+  width: 16px;
+  vertical-align: middle;
+}
+
+/* form */
+
+h1 {
+  font-family: var(--font-family-accent);
+  font-weight: var(--font-weight-light);
+  text-transform: uppercase;
+}
+
+form {
+  margin: 2.5rem auto;
+}
+
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.contact-section {
+  text-align: center;
+  padding: 2rem;
+}
+
+.form-group {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.form-group * {
+  margin-bottom: 1.5rem;
+}
+
+.form-info {
+  margin: 2.5rem 0;
+}
+
+input:not([type="checkbox"]),
+select,
+textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-dividers);
+  border-radius: 4px;
+  font-family: var(--font-family-accent);
+}
+
+#message {
+  height: 168px;
+}
+
+.form-footer button {
+  margin-top: 40px;
+  width: 285px;
+  height: 52px;
+  background: var(--color-blue);
+  color: var(--color-white);
+}
+
+.invalid {
+  border: 1px solid var(--color-blue);
+}
+
+/* modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--color-background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.3s, visibility 0.3s;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.modal-content {
+  background: var(--color-white);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* footer */
+.footer {
+  background: var(--color-gray-1);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.footer-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo {
+  height: 12px;
+  vertical-align: middle;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.2);
+}
+
+.footer-bottom {
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.attribution {
+  color: var(--color-gray-3);
+  font-size: 0.75rem;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--color-white);
+  cursor: pointer;
+}
+
+/* media queries */
+@media (max-width: 768px) {
+  form {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  form input,
+  form select,
+  form textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+.menu {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--color-blue);
+  cursor: pointer;
+}
+
+@media (max-width: 1215px) {
+  .menu {
+    visibility: hidden;
+    flex-direction: column;
+    background: var(--color-gray-1);
+    padding: 1rem;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    z-index: 1000;
+  }
+
+  .menu.visible,
+  .menu-toggle {
+    visibility: visible;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-right {
+    position: absolute;
+    top: 360px;
+  }
+}
